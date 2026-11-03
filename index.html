@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>FEHB Survey 2026 Results</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="What 80 Foreign Service households said about their FEHB health plans before 2027 Open Season.">
+<link rel="canonical" href="https://andrewbyrley.com/fehb/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andrewbyrley.com/fehb/">
+<meta property="og:title" content="FEHB Survey 2026: What 80 Foreign Service Households Said">
+<meta property="og:description" content="Who's staying, who's switching, how plans handle overseas claims, and what GEHA HDHP and Blue Cross members report. Results before 2027 Open Season.">
+<meta property="og:image" content="https://andrewbyrley.com/fehb/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How well are our FEHB plans working? Survey results from 80 Foreign Service households.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one calm reading column, a chapter per finding; each chapter = headline finding, one visual, optional detail. */
+:root {
+  --page: #f8f9fa;
+  --surface: #ffffff;
+  --ink: #16202a;
+  --ink-2: #4a5560;
+  --muted: #737e88;
+  --rule: #e2e6ea;
+  --accent: #1f5fa6;     /* the one highlight per chart */
+  --accent-2: #93b8e3;   /* secondary emphasis */
+  --off: #cbd2d8;        /* everything not highlighted */
+  --off-2: #e2e7eb;
+  --track: #e9edf0;
+  --wash: #edf3fa;
+  --f-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0f151b; --surface: #161e27; --ink: #edf1f4; --ink-2: #b4bfc9; --muted: #85919c; --rule: #26313b;
+    --accent: #7db0eb; --accent-2: #3d6fa7; --off: #3b4752; --off-2: #2b3540; --track: #222c35; --wash: #172638;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0f151b; --surface: #161e27; --ink: #edf1f4; --ink-2: #b4bfc9; --muted: #85919c; --rule: #26313b;
+  --accent: #7db0eb; --accent-2: #3d6fa7; --off: #3b4752; --off-2: #2b3540; --track: #222c35; --wash: #172638;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 17px/1.6 var(--f-body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--page); }
+.col {
+  max-width: 740px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+
+/* ---------- header ---------- */
+header.top { padding-block: 48px 8px; display: grid; gap: 16px; }
+.kicker { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(2.1rem, 1.4rem + 3vw, 3.2rem); line-height: 1.06; letter-spacing: -0.01em; }
+.dek { font-size: 1.15rem; color: var(--ink-2); max-width: 36em; }
+.who-strip { display: grid; gap: 10px; margin-top: 8px; }
+.who-strip .lab { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.92rem; color: var(--ink-2); }
+.who-strip .lab span { display: inline-flex; align-items: center; gap: 7px; }
+.who-strip .lab b { color: var(--ink); }
+.sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
+.fine { font-size: 0.9rem; color: var(--muted); max-width: 40em; }
+nav.jump { padding-block: 14px 4px; }
+nav.jump .jump-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+nav.jump .jump-links { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.jump a { flex: none; font-size: 0.88rem; text-decoration: none; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 12px; background: var(--surface); }
+nav.jump a:hover { color: var(--ink); border-color: var(--off); }
+
+/* ---------- chapters ---------- */
+.chapter { padding-block: 56px; border-top: 1px solid var(--rule); display: grid; gap: 22px; }
+.chapter:first-of-type { border-top: 0; }
+.chapter > header { display: grid; gap: 8px; }
+.chapter h2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.6rem, 1.25rem + 1.5vw, 2.15rem); line-height: 1.15; }
+.chapter .sub { color: var(--ink-2); max-width: 36em; }
+
+/* dots: one per household */
+.dots { display: grid; grid-template-columns: repeat(auto-fill, 13px); gap: 5px; max-width: calc(20 * 18px); }
+.dots i { width: 13px; height: 13px; border-radius: 50%; background: var(--off-2); display: block; }
+.dots.lg { grid-template-columns: repeat(auto-fill, 16px); gap: 6px; max-width: calc(14 * 22px); }
+.dots.lg i { width: 16px; height: 16px; }
+
+/* comparison bars */
+.bars { display: grid; gap: 20px; }
+.cbar { display: grid; gap: 6px; }
+.cbar .t { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.cbar .t .l { font-size: 1rem; }
+.cbar .t .v { font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+.cbar .t .v small { font-weight: 400; color: var(--muted); font-size: 0.88rem; }
+.cbar .track { height: 14px; border-radius: 0 7px 7px 0; background: var(--track); }
+.cbar .track span { display: block; height: 100%; border-radius: 0 7px 7px 0; background: var(--accent); }
+.cbar.quiet .track span { background: var(--off); }
+.cbar.small .t .l, .cbar.small .t .v { font-size: 0.93rem; }
+.cbar.small .track { height: 8px; }
+.aside { font-size: 0.95rem; color: var(--ink-2); padding-left: 14px; border-left: 3px solid var(--off-2); }
+
+/* big inline stat */
+.stat { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 14px; }
+.stat .n { font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--accent); white-space: nowrap; }
+.stat .n small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.stat p { color: var(--ink-2); }
+
+/* donut */
+.decide { display: grid; gap: 24px; grid-template-columns: 200px minmax(0, 1fr); align-items: center; }
+.ring { position: relative; width: 200px; aspect-ratio: 1; }
+.ring svg { width: 100%; height: 100%; display: block; }
+.ring path { cursor: pointer; transition: fill .2s; }
+.ring .center { position: absolute; inset: 24%; display: grid; place-content: center; text-align: center; pointer-events: none; }
+.ring .center b { font-size: 2.2rem; line-height: 1; }
+.ring .center span { font-size: 0.85rem; color: var(--ink-2); margin-top: 4px; }
+.choices { display: grid; gap: 8px; }
+.choices button {
+  display: grid; grid-template-columns: 14px 1fr auto; align-items: center; gap: 12px; width: 100%;
+  font: inherit; text-align: left; color: var(--ink); background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 12px 14px; cursor: pointer;
+}
+.choices button:hover { border-color: var(--off); }
+.choices button[aria-pressed="true"] { border-color: var(--accent); background: var(--wash); }
+.choices .lbl b { display: block; font-weight: 600; }
+.choices .lbl small { color: var(--muted); font-size: 0.82rem; }
+.choices .ct { font-weight: 700; font-variant-numeric: tabular-nums; }
+.choices .ct small { font-weight: 400; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: grid; gap: 18px; }
+.panel h3 { font-size: 1.1rem; }
+.panel .lead { color: var(--ink-2); font-size: 0.95rem; }
+.drow { display: grid; grid-template-columns: minmax(7.5em, 11em) 1fr auto; align-items: center; gap: 10px; font-size: 0.95rem; }
+.drow .d { display: flex; flex-wrap: wrap; gap: 4px; }
+.drow .d i { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); display: block; }
+.drow .c { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.drows { display: grid; gap: 8px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills span { font-size: 0.88rem; padding: 4px 11px; border-radius: 999px; background: var(--off-2); color: var(--ink-2); }
+.pills b { color: var(--ink); }
+.empty { color: var(--ink-2); font-size: 0.95rem; }
+
+/* ranked */
+.rank { display: grid; gap: 12px; }
+.rank .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; }
+.rank .row .l { font-size: 0.98rem; }
+.rank .row .v { font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: 0.93rem; }
+.rank .row .track { grid-column: 1 / -1; height: 10px; border-radius: 0 5px 5px 0; background: var(--track); }
+.rank .row .track span { display: block; height: 100%; border-radius: 0 5px 5px 0; background: var(--accent-2); }
+.rank .row.hi .track span { background: var(--accent); }
+.rank .row.hi .l { font-weight: 600; }
+
+/* details */
+details.more { border-top: 1px solid var(--rule); padding-top: 12px; }
+details.more > summary { cursor: pointer; color: var(--accent); font-size: 0.95rem; font-weight: 500; list-style: none; display: inline-flex; gap: 8px; align-items: center; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "+"; font-weight: 700; width: 1em; }
+details.more[open] > summary::before { content: "\2013"; }
+details.more .inner { padding-top: 16px; display: grid; gap: 22px; }
+details.more h4 { margin: 0 0 10px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.95rem; }
+.list li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed transparent; }
+.list li span:last-child { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+
+/* quotes */
+blockquote { margin: 0; display: grid; gap: 6px; }
+blockquote p { font-family: var(--f-display); font-size: 1.22rem; line-height: 1.45; }
+blockquote footer { font-size: 0.85rem; color: var(--muted); }
+.pull { padding-left: 16px; border-left: 3px solid var(--accent-2); }
+.quotes { display: grid; gap: 28px; }
+.qtheme { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.btn-link { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; width: max-content; }
+
+/* situations */
+.cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.cards button {
+  font: inherit; text-align: left; color: var(--ink); background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 14px 16px; cursor: pointer; display: grid; gap: 2px;
+}
+.cards button:hover { border-color: var(--off); }
+.cards button[aria-pressed="true"] { border-color: var(--accent); background: var(--wash); }
+.cards b { font-weight: 600; }
+.cards small { color: var(--muted); font-size: 0.85rem; }
+.findings { display: grid; gap: 14px; }
+.finding { display: grid; grid-template-columns: 5.2em 1fr; gap: 2px 14px; align-items: baseline; }
+.finding .n { font-weight: 700; font-size: 1.25rem; white-space: nowrap; }
+.finding .n small { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+.finding .track { grid-column: 2; height: 6px; border-radius: 3px; background: var(--track); margin-top: 4px; }
+.finding .track span { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
+
+/* chat with the data */
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 22px; counter-reset: s; }
+.steps > li { display: grid; grid-template-columns: 2rem 1fr; gap: 4px 12px; counter-increment: s; }
+.steps > li::before { content: counter(s); width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-content: center; background: var(--wash); color: var(--accent); font-weight: 700; }
+.steps > li > div { display: grid; gap: 8px; min-width: 0; }
+.steps h3 { font-size: 1.05rem; padding-top: 3px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; width: max-content; max-width: 100%; font: 600 0.95rem/1 var(--f-body); color: #ffffff; background: var(--accent); border: 0; border-radius: 8px; padding: 12px 16px; text-decoration: none; cursor: pointer; }
+:root[data-theme="dark"] .btn { color: #0f151b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #0f151b; } }
+.srcs { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: 0.95rem; }
+.prompt { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+.prompt pre { margin: 0; padding: 16px; white-space: pre-wrap; font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ink-2); max-height: 22em; overflow: auto; }
+.prompt .copy { position: absolute; top: 8px; right: 8px; font: 600 0.82rem/1 var(--f-body); color: var(--accent); background: var(--wash); border: 0; border-radius: 6px; padding: 8px 10px; cursor: pointer; }
+
+/* other plans */
+.plans { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.plan { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.plan header { display: grid; gap: 2px; }
+.plan h3 { font-family: var(--f-display); font-weight: 600; font-size: 1.45rem; }
+.plan header p { font-size: 0.9rem; }
+.mrows { display: grid; gap: 0; }
+.mrow + .mrow { border-top: 1px solid var(--rule); }
+.mrow { padding-block: 14px; }
+.mrow:first-child { padding-top: 0; }
+.mrow:last-child { padding-bottom: 0; }
+.mrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 12px; font-size: 0.95rem; }
+.mrow.hidden-row .l { grid-column: 1 / -1; }
+.mrow .few { font-size: 0.88rem; font-weight: 600; color: var(--muted); min-width: 0; }
+.mrow .v { font-weight: 700; white-space: nowrap; }
+.mrow .v small { font-weight: 400; color: var(--muted); }
+.mrow .line { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.mdots { display: flex; flex-wrap: wrap; gap: 5px; }
+.mdots i { width: 14px; height: 14px; border-radius: 50%; background: var(--off-2); display: block; }
+.mdots i.on { background: var(--accent); }
+.ref { font-size: 0.82rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pquotes { display: grid; gap: 16px; border-top: 1px solid var(--rule); padding-top: 16px; }
+.pquotes blockquote p { font-size: 1.05rem; }
+
+/* about + footer */
+.about ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; color: var(--ink-2); }
+.about strong { color: var(--ink); }
+footer.end { padding-block: 28px 56px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88rem; display: grid; gap: 6px; }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  header.top { padding-block: 32px 4px; }
+  .chapter { padding-block: 44px; }
+  .decide { grid-template-columns: 1fr; justify-items: center; }
+  .decide .choices { width: 100%; }
+  .drow { grid-template-columns: 1fr auto; }
+  .drow .d { grid-column: 1 / -1; grid-row: 2; }
+  .panel { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+
+<div class="col">
+  <header class="top">
+    <div class="kicker">FEHB Foreign Service community survey · October 2026</div>
+    <h1>How well are our FEHB plans working?</h1>
+    <p class="dek" id="dek"></p>
+    <div class="who-strip" id="who-strip"></div>
+    <p class="fine" id="caveat"></p>
+    <nav class="jump" aria-label="Sections">
+      <div class="jump-label">Jump to a section</div>
+      <div class="jump-links"><a href="#price">Value</a><a href="#switch">2027 plans</a><a href="#others">Other plans</a><a href="#place">Overseas vs. U.S.</a><a href="#claims">Claims</a><a href="#priorities">Priorities</a><a href="#you">Your situation</a><a href="#words">Quotes</a><a href="#data">Chat with the data</a></div>
+    </nav>
+  </header>
+
+  <section class="chapter" id="price" aria-labelledby="h-price"></section>
+  <section class="chapter" id="switch" aria-labelledby="h-switch"></section>
+  <section class="chapter" id="others" aria-labelledby="h-others"></section>
+  <section class="chapter" id="place" aria-labelledby="h-place"></section>
+  <section class="chapter" id="claims" aria-labelledby="h-claims"></section>
+  <section class="chapter" id="priorities" aria-labelledby="h-priorities"></section>
+  <section class="chapter" id="you" aria-labelledby="h-you"></section>
+  <section class="chapter" id="words" aria-labelledby="h-words"></section>
+  <section class="chapter" id="data" aria-labelledby="h-data"></section>
+  <section class="chapter about" id="about" aria-labelledby="h-about"></section>
+
+  <footer class="end">
+    <p>A volunteer community survey by Andrew Byrley. I made this because I, too, am struggling with the decision to keep FSBP in the face of rising costs.</p>
+    <p>This effort is not affiliated with the State Department, OPM, AFSA, AFSPA or any insurance carrier. This is not advice.</p>
+
+  </footer>
+</div>
+
+<script>
+const D = {"n": 80, "first": "Oct 8", "last": "Oct 31", "minN": 5, "fsbp": 66, "csv": "fehb-survey-2026-responses.csv", "who": {"plans": [{"n": 66, "of": 80, "label": "FSBP"}, {"n": 8, "of": 80, "label": "GEHA HDHP"}, {"n": 6, "of": 80, "label": "Blue Cross (Basic or Standard)"}], "enroll": [{"label": "Self and Family", "n": 60}, {"label": "Self Plus One", "n": 8}, {"label": "Self Only", "n": 12}], "where27": [{"label": "Mostly overseas", "n": 46}, {"label": "Mostly in the U.S.", "n": 27}, {"label": "Split (moving during 2027)", "n": 5}, {"label": "Not sure yet", "n": 2}], "regions": [{"label": "Europe and Eurasia", "n": 21}, {"label": "Western Hemisphere", "n": 20}, {"label": "East Asia and Pacific", "n": 11}, {"label": "Near East (Middle East and North Africa)", "n": 9}, {"label": "Not overseas in the past 2 years", "n": 9}, {"label": "South and Central Asia", "n": 5}, {"label": "Africa", "n": 5}]}, "value": {"recommend": {"n": 59, "of": 66}, "worth": {"n": 16, "of": 66}, "worth_parts": [{"label": "Yes", "n": 16}, {"label": "Not sure", "n": 26}, {"label": "No", "n": 13}, {"label": "Haven't checked yet", "n": 11}], "rec_parts": [{"label": "Yes", "n": 39}, {"label": "Probably", "n": 20}, {"label": "Probably not", "n": 5}, {"label": "No", "n": 2}], "others_worth": {"n": 9, "of": 14}, "others_rec": {"n": 13, "of": 14}, "others_n": 14}, "decide": {"base": 66, "groups": [{"key": "staying", "label": "Staying", "n": 36, "parts": [{"label": "Staying on my plan", "n": 19}, {"label": "Leaning toward staying", "n": 17}], "detail": {"looking": 16, "considering": [{"label": "GEHA HDHP", "n": 7}, {"label": "Blue Cross Standard", "n": 4}, {"label": "Compass Rose High", "n": 4}, {"label": "GEHA Standard", "n": 2}, {"label": "Blue Cross Focus", "n": 1}, {"label": "Compass Rose Standard", "n": 1}, {"label": "FSBP", "n": 1}, {"label": "GEHA High", "n": 1}, {"label": "Not sure yet", "n": 4}], "matters": [{"label": "Easy claims for overseas care", "n": 19}, {"label": "The premium", "n": 17}, {"label": "Deductible and out-of-pocket costs", "n": 13}], "overseas27": 25, "us27": 9}}, {"key": "undecided", "label": "Undecided", "n": 14, "parts": [{"label": "Undecided", "n": 14}], "detail": {"looking": 12, "considering": [{"label": "Blue Cross Standard", "n": 5}, {"label": "GEHA HDHP", "n": 5}, {"label": "Blue Cross Basic", "n": 4}, {"label": "GEHA Standard", "n": 3}, {"label": "APWU", "n": 1}, {"label": "Blue Cross Focus", "n": 1}, {"label": "Compass Rose High", "n": 1}, {"label": "Compass Rose Standard", "n": 1}, {"label": "FSBP", "n": 1}, {"label": "GEHA Elevate", "n": 1}, {"label": "GEHA Elevate Plus", "n": 1}, {"label": "GEHA High", "n": 1}, {"label": "MHBP", "n": 1}, {"label": "Regional plan or HMO", "n": 1}, {"label": "SAMBA", "n": 1}, {"label": "Not sure yet", "n": 3}, {"label": "Other", "n": 1}], "matters": [{"label": "The premium", "n": 11}, {"label": "Deductible and out-of-pocket costs", "n": 6}, {"label": "Easy claims for overseas care", "n": 4}], "overseas27": 6, "us27": 5}}, {"key": "switching", "label": "Switching", "n": 16, "parts": [{"label": "Leaning toward switching", "n": 10}, {"label": "Definitely switching", "n": 6}], "detail": {"looking": 16, "considering": [{"label": "GEHA HDHP", "n": 10}, {"label": "Blue Cross Basic", "n": 3}, {"label": "GEHA High", "n": 3}, {"label": "GEHA Standard", "n": 3}, {"label": "Blue Cross Standard", "n": 2}, {"label": "Compass Rose Standard", "n": 2}, {"label": "SAMBA", "n": 2}, {"label": "Compass Rose High", "n": 1}, {"label": "FSBP", "n": 1}, {"label": "GEHA Elevate", "n": 1}, {"label": "GEHA Elevate Plus", "n": 1}, {"label": "MHBP", "n": 1}, {"label": "Not sure yet", "n": 4}], "matters": [{"label": "The premium", "n": 15}, {"label": "Easy claims for overseas care", "n": 5}, {"label": "Deductible and out-of-pocket costs", "n": 4}], "overseas27": 9, "us27": 6}}], "others_switching": {"n": 3, "of": 14}}, "place": {"os": {"n": 49, "of": 65}, "us": {"n": 37, "of": 57}, "us_rows": [{"text": "had no claim denied for U.S. care", "n": 36, "of": 54, "bad": 0}, {"text": "found in-network providers easily in the U.S.", "n": 42, "of": 51, "bad": 9}, {"text": "said getting prescriptions worked fine", "n": 44, "of": 57, "bad": 0}, {"text": "found prior approval easy, when they needed it", "n": 20, "of": 29, "bad": 0}, {"text": "had customer service fix things on the first try", "n": 24, "of": 43, "bad": 0}, {"text": "had an overseas provider bill the plan directly", "n": 11, "of": 56, "bad": 0}]}, "claims": {"base": 55, "reversed": {"n": 32, "of": 54}, "clean": {"n": 45, "of": 55}, "final": {"n": 21, "of": 54}, "dispute": 4, "typical_wait": {"n": 51, "of": 55}, "followups": [{"label": "None", "n": 0}, {"label": "1 to 2 times", "n": 11}, {"label": "3 to 5 times", "n": 3}, {"label": "6 or more times", "n": 0}], "reimb": [{"label": "Under 2 weeks", "n": 1}, {"label": "2 to 4 weeks", "n": 28}, {"label": "1 to 3 months", "n": 23}, {"label": "3 to 6 months", "n": 3}, {"label": "More than 6 months", "n": 0}, {"label": "Some are still pending", "n": 0}], "receipts": [{"label": "Easy", "n": 45}, {"label": "Some hassle", "n": 10}, {"label": "A real pain", "n": 0}]}, "priorities": {"base": 80, "items": [{"label": "The premium", "n": 47}, {"label": "Easy claims for overseas care", "n": 31}, {"label": "Deductible and out-of-pocket costs", "n": 29}, {"label": "U.S. provider network", "n": 12}, {"label": "HSA savings", "n": 7}, {"label": "Prescription coverage", "n": 7}, {"label": "Direct billing abroad", "n": 5}, {"label": "Customer service", "n": 2}, {"label": "Other", "n": 7}]}, "situations": [{"id": "overseas", "title": "Overseas in 2027", "blurb": "FSBP members who expect to be mostly overseas next year.", "n": 40, "findings": [{"text": "would recommend FSBP", "n": 37, "of": 40}, {"text": "say it is worth the 2027 price", "n": 10, "of": 40}, {"text": "are leaning toward switching or definitely switching", "n": 9, "of": 40}, {"text": "say it works well for care overseas", "n": 31, "of": 40}, {"text": "say it works well for care in the U.S.", "n": 24, "of": 33}], "note": "Plans they named most as alternatives: GEHA HDHP (15), Blue Cross Standard (4), Compass Rose High (3).", "quote": {"who": "FSBP member", "text": "I have really loved FSBP living overseas. It is easy to submit bills, coverage is comprehensive and Rx coverage is great! I’m really upset to be considering a change due to the high cost."}}, {"id": "stateside", "title": "In the U.S. in 2027", "blurb": "FSBP members who expect to be mostly in the U.S. next year.", "n": 20, "findings": [{"text": "would recommend FSBP", "n": 18, "of": 20}, {"text": "say it is worth the 2027 price", "n": 5, "of": 20}, {"text": "are leaning toward switching or definitely switching", "n": 6, "of": 20}, {"text": "say it works well for care overseas", "n": 14, "of": 19}, {"text": "say it works well for care in the U.S.", "n": 10, "of": 19}], "note": "Plans they named most as alternatives: Blue Cross Standard (7), Blue Cross Basic (5), GEHA HDHP (5).", "quote": {"who": "FSBP member", "text": "Overseas, our plan is fine. I’m scared to see how it will work if we’re in the U.S. next year in terms of being able to find in-network care."}}, {"id": "claims", "title": "Lots of overseas claims", "blurb": "FSBP members who filed more than 10 overseas claims in the past 2 years.", "n": 45, "findings": [{"text": "would recommend FSBP", "n": 41, "of": 45}, {"text": "say it is worth the 2027 price", "n": 10, "of": 45}, {"text": "are leaning toward switching or definitely switching", "n": 8, "of": 45}, {"text": "say it works well for care overseas", "n": 33, "of": 45}, {"text": "say it works well for care in the U.S.", "n": 26, "of": 38}, {"text": "had a claim denied, then paid after pushing back", "n": 28, "of": 44}], "note": "Plans they named most as alternatives: GEHA HDHP (17), Blue Cross Standard (6), Blue Cross Basic (5).", "quote": {"who": "FSBP member", "text": "Once I figured out I needed to always include a note explaining the care (we live overseas, this is for an appointment in ...), most claims have been paid on first submission."}}, {"id": "geha", "title": "Thinking about GEHA HDHP", "blurb": "22 people named GEHA HDHP as a 2027 option. 22 of them are on FSBP now, and 15 expect to be mostly overseas in 2027.", "n": 22, "members_label": "What its 8 current members in the survey say", "findings": [{"text": "would recommend GEHA HDHP", "n": 7, "of": 8}, {"text": "say it is worth the 2027 price", "n": 5, "of": 8}, {"text": "say it works well for care overseas", "n": 4, "of": 7}, {"text": "say it works well for care in the U.S.", "n": 3, "of": 5}, {"text": "had most overseas claims paid without extra paperwork", "n": 4, "of": 6}], "note": "A small group, so read these as a handful of experiences.", "quote": {"who": "GEHA HDHP member", "text": "The HSA that I fully fund every year is [invested and growing]. I might never spend it down. I wouldn’t trade that peace of mind for all the massages, great customer service, [or] low deductibles in the world."}}, {"id": "bluecross", "title": "Thinking about Blue Cross", "blurb": "14 people named Blue Cross as a 2027 option. 14 of them are on FSBP now, and 6 expect to be mostly overseas in 2027.", "n": 14, "members_label": "What its 6 current members in the survey say", "findings": [{"text": "would recommend Blue Cross", "n": 6, "of": 6}, {"text": "say it is worth the 2027 price", "n": 4, "of": 6}, {"text": "say it works well for care overseas", "n": 5, "of": 6}, {"text": "say it works well for care in the U.S.", "n": 6, "of": 6}], "note": "A small group, so read these as a handful of experiences.", "quote": {"who": "Blue Cross member", "text": "Plan has been pretty easy once they got through the hiccup of changing reimbursement providers ... When I did have a problem and have to appeal it usually involved laziness (i.e. them mistaking an ophthalmologist for an optometrist)."}}], "other_plans": {"fsbp": [{"label": "Would recommend their plan", "n": 59, "of": 66, "hidden": false}, {"label": "Say it is worth the 2027 price", "n": 16, "of": 66, "hidden": false}, {"label": "Say it works well for care overseas", "n": 49, "of": 65, "hidden": false}, {"label": "Say it works well for care in the U.S.", "n": 37, "of": 57, "hidden": false}, {"label": "Had most overseas claims paid without extra paperwork", "n": 48, "of": 58, "hidden": false}, {"label": "Had no claim denied for U.S. care", "n": 36, "of": 54, "hidden": false}, {"label": "Are staying on their plan in 2027", "n": 36, "of": 66, "hidden": false}], "plans": [{"name": "GEHA HDHP", "n": 8, "kind": "A high-deductible plan with a health savings account (HSA).", "measures": [{"label": "Would recommend their plan", "n": 7, "of": 8, "hidden": false}, {"label": "Say it is worth the 2027 price", "n": 5, "of": 8, "hidden": false}, {"label": "Say it works well for care overseas", "n": 4, "of": 7, "hidden": false}, {"label": "Say it works well for care in the U.S.", "n": 3, "of": 5, "hidden": false}, {"label": "Had most overseas claims paid without extra paperwork", "n": 4, "of": 6, "hidden": false}, {"label": "Had no claim denied for U.S. care", "n": 4, "of": 5, "hidden": false}, {"label": "Are staying on their plan in 2027", "n": 5, "of": 8, "hidden": false}], "quotes": [{"who": "GEHA HDHP member", "text": "The HSA that I fully fund every year is [invested and growing]. I might never spend it down. I wouldn’t trade that peace of mind for all the massages, great customer service, [or] low deductibles in the world."}, {"who": "GEHA HDHP member", "text": "If paying out of pocket for a service, it’s worth checking to see the reimbursed cost so that you’re not stuck paying the difference ... We never hit our deductible anyway and typically only tap into our HSA contributions."}]}, {"name": "Blue Cross", "n": 6, "kind": "Basic and Standard options combined.", "measures": [{"label": "Would recommend their plan", "n": 6, "of": 6, "hidden": false}, {"label": "Say it is worth the 2027 price", "n": 4, "of": 6, "hidden": false}, {"label": "Say it works well for care overseas", "n": 5, "of": 6, "hidden": false}, {"label": "Say it works well for care in the U.S.", "n": 6, "of": 6, "hidden": false}, {"label": "Had most overseas claims paid without extra paperwork", "n": 4, "of": 4, "hidden": true}, {"label": "Had no claim denied for U.S. care", "n": 6, "of": 6, "hidden": false}, {"label": "Are staying on their plan in 2027", "n": 4, "of": 6, "hidden": false}], "quotes": [{"who": "Blue Cross member", "text": "Plan has been pretty easy once they got through the hiccup of changing reimbursement providers ... When I did have a problem and have to appeal it usually involved laziness (i.e. them mistaking an ophthalmologist for an optometrist)."}, {"who": "Blue Cross member", "text": "This year I looked at FSBP but they seem unstable and declining. I am almost certainly switching to Basic."}]}]}, "quotes": [{"theme": "Getting claims paid", "who": "FSBP member", "text": "FSBP has a lot of specific requirements for the claims. When we have all of the information exactly as they want it, it is easy. Otherwise, it is difficult."}, {"theme": "Getting claims paid", "who": "FSBP member", "text": "Once I figured out I needed to always include a note explaining the care (we live overseas, this is for an appointment in ...), most claims have been paid on first submission."}, {"theme": "Getting claims paid", "who": "FSBP member", "text": "I always submit the diagnosis and treatment code [with the claim forms] ... Very easy claim process, very easy reimbursement process. The plan just works."}, {"theme": "Getting claims paid", "who": "FSBP member", "text": "Starting around fall 2025, [FSBP] started requiring tons of information that I didn’t know how or where to submit for my overseas claim ... They also have awful customer service, and the answer you get depends on who you talk to."}, {"theme": "Getting claims paid", "who": "FSBP member", "text": "When I get the reimbursement, it’s often less than what I submitted ... Getting issues resolved takes an hour out of the day ... the answer is typically “submit an appeal.”"}, {"theme": "Overseas vs. at home", "who": "FSBP member", "text": "FSBP is amazing overseas but only decent when CONUS."}, {"theme": "Overseas vs. at home", "who": "FSBP member", "text": "Overseas, our plan is fine. I’m scared to see how it will work if we’re in the U.S. next year in terms of being able to find in-network care."}, {"theme": "Overseas vs. at home", "who": "FSBP member", "text": "Did not fully cover a required (for travel) vaccination. Brochure clearly says this vaccine is covered if required ... by CDC."}, {"theme": "The price", "who": "FSBP member", "text": "I have really loved FSBP living overseas. It is easy to submit bills, coverage is comprehensive and Rx coverage is great! I’m really upset to be considering a change due to the high cost."}, {"theme": "The price", "who": "FSBP member", "text": "Premiums [rising] sharply plus out of pocket max increasing sharply is a disincentive."}, {"theme": "The price", "who": "FSBP member", "text": "I have appreciated this plan but am looking at switching this year. The price increase (as well as increases over the past few years) makes this an easy decision."}, {"theme": "The massage benefit", "who": "FSBP member", "text": "Massage benefit if you use it cancels out premium even for just one person."}, {"theme": "The massage benefit", "who": "FSBP member", "text": "The FSBP massage benefit is becoming a real hassle ... [places] usually will not give a formal receipt or share licensing info to satisfy FSBP. I wish they would scratch it to lower costs for everybody."}, {"theme": "Other plans", "who": "GEHA HDHP member", "text": "The HSA that I fully fund every year is [invested and growing]. I might never spend it down. I wouldn’t trade that peace of mind for all the massages, great customer service, [or] low deductibles in the world."}, {"theme": "Other plans", "who": "GEHA HDHP member", "text": "If paying out of pocket for a service, it’s worth checking to see the reimbursed cost so that you’re not stuck paying the difference ... We never hit our deductible anyway and typically only tap into our HSA contributions."}, {"theme": "Other plans", "who": "Blue Cross member", "text": "Plan has been pretty easy once they got through the hiccup of changing reimbursement providers ... When I did have a problem and have to appeal it usually involved laziness (i.e. them mistaking an ophthalmologist for an optometrist)."}, {"theme": "Other plans", "who": "Blue Cross member", "text": "This year I looked at FSBP but they seem unstable and declining. I am almost certainly switching to Basic."}]};
+
+/* ---------- helpers ---------- */
+const $ = (s) => document.querySelector(s);
+const SVG = new Set(['svg', 'path']);
+function h(tag, attrs, ...kids) {
+  const el = SVG.has(tag) ? document.createElementNS('http://www.w3.org/2000/svg', tag) : document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat(Infinity)) {
+    if (kid == null || kid === false) continue;
+    el.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  }
+  return el;
+}
+const pct = (n, of) => (of ? Math.round((100 * n) / of) : 0);
+const pctTxt = (n, of) => (of >= 20 ? `${pct(n, of)}%` : null);
+const ofTxt = (n, of) => [String(n), h('small', null, ` of ${of}`)];
+
+function chapter(id, kicker, title, sub) {
+  const sec = $('#' + id);
+  sec.append(h('header', null, h('div', { class: 'kicker' }, kicker), h('h2', { id: 'h-' + id }, title), sub ? h('p', { class: 'sub' }, sub) : null));
+  return sec;
+}
+function more(label, ...kids) {
+  return h('details', { class: 'more' }, h('summary', null, label), h('div', { class: 'inner' }, ...kids));
+}
+function cbar(label, f, opts = {}) {
+  return h('div', { class: 'cbar' + (opts.quiet ? ' quiet' : '') + (opts.small ? ' small' : '') },
+    h('div', { class: 't' }, h('span', { class: 'l' }, label),
+      h('span', { class: 'v' }, ofTxt(f.n, f.of), pctTxt(f.n, f.of) ? h('small', null, ` · ${pctTxt(f.n, f.of)}`) : null)),
+    h('div', { class: 'track', role: 'img', 'aria-label': `${label}: ${f.n} of ${f.of}` }, h('span', { style: `width:${pct(f.n, f.of)}%` })));
+}
+function dots(parts, cls) {
+  // parts: [{n, color}] drawn in order, one dot per household
+  const box = h('div', { class: 'dots' + (cls ? ' ' + cls : ''), role: 'img', 'aria-label': parts.map((p) => `${p.n} ${p.label}`).join(', ') });
+  parts.forEach((p) => { for (let i = 0; i < p.n; i++) box.append(h('i', { style: `background: var(${p.color})` })); });
+  return box;
+}
+function list(items, fmt) {
+  return h('ul', { class: 'list' }, items.map((d) => h('li', null, h('span', null, d.label), h('span', null, fmt ? fmt(d) : d.n))));
+}
+function rank(items, base, opts = {}) {
+  const max = Math.max(1, ...items.map((d) => d.n));
+  return h('div', { class: 'rank' }, items.map((d, i) => h('div', { class: 'row' + (opts.highlightFirst && i === 0 ? ' hi' : '') },
+    h('span', { class: 'l' }, d.label),
+    h('span', { class: 'v' }, `${d.n} of ${base}`),
+    h('div', { class: 'track' }, h('span', { style: `width:${(100 * d.n) / max}%` })))));
+}
+
+/* ---------- header ---------- */
+function renderHeader() {
+  $('#dek').replaceChildren(
+    `${D.n} Foreign Service households `,
+    h('a', { href: 'https://www.facebook.com/groups/trailinghouses/posts/29951514941115140', target: '_blank', rel: 'noopener' }, 'answered an anonymous survey about their health plans'),
+    ' before 2027 Open Season (Nov 9 to Dec 14). Here are the results.');
+  const p = D.who.plans;
+  const colors = ['--accent', '--accent-2', '--off'];
+  $('#who-strip').append(
+    dots(p.map((d, i) => ({ n: d.n, color: colors[i], label: d.label }))),
+    h('div', { class: 'lab' }, p.map((d, i) => h('span', null, h('i', { class: 'sw', style: `background: var(${colors[i]})` }), h('b', null, d.n), ' ' + d.label))));
+  $('#caveat').textContent = `One dot per household. Because ${D.fsbp} of ${D.n} are on FSBP, most findings below are about FSBP members. These are people who chose to answer, not a random sample.`;
+}
+
+/* ---------- 1. value ---------- */
+function renderPrice() {
+  const v = D.value;
+  const sec = chapter('price', 'Value', 'FSBP members like their plan, yet few say it is worth the 2027 price.',
+    `What the ${D.fsbp} FSBP members said:`);
+  sec.append(
+    h('div', { class: 'bars' }, cbar('Would recommend FSBP to a colleague', v.recommend), cbar('Say it is worth the 2027 price', v.worth)),
+    h('p', { class: 'aside' }, `Most of the rest aren't sure yet. For comparison, ${v.others_worth.n} of the ${v.others_n} GEHA HDHP and Blue Cross members say their plan is worth its 2027 price. Their premiums rose far less.`),
+    more('All the answers from FSBP members',
+      h('div', null, h('h4', null, 'Would you recommend your plan?'), list(v.rec_parts)),
+      h('div', null, h('h4', null, 'Is it worth the 2027 price?'), list(v.worth_parts))));
+}
+
+/* ---------- 2. stay or switch ---------- */
+function arc(r0, r1, a0, a1) {
+  const p = (r, a) => [100 + r * Math.sin(a), 100 - r * Math.cos(a)];
+  const large = a1 - a0 > Math.PI ? 1 : 0;
+  const [x0, y0] = p(r1, a0), [x1, y1] = p(r1, a1), [x2, y2] = p(r0, a1), [x3, y3] = p(r0, a0);
+  return `M${x0},${y0} A${r1},${r1} 0 ${large} 1 ${x1},${y1} L${x2},${y2} A${r0},${r0} 0 ${large} 0 ${x3},${y3} Z`;
+}
+function renderSwitch() {
+  const dc = D.decide;
+  const top = dc.groups.find((g) => g.key === 'switching').detail;
+  const topPlan = top && top.considering.find((c) => c.label !== 'Not sure yet' && c.label !== 'Other');
+  const sec = chapter('switch', '2027 plans', `Most FSBP members are staying for now. Switchers are looking at ${topPlan ? topPlan.label : 'other plans'}.`,
+    'Tap a group to see which plans its members are considering and what matters to them.');
+  const shades = ['--off', '--off-2', '--off'];
+  let sel = dc.groups.findIndex((g) => g.key === 'switching');
+  const svg = h('svg', { viewBox: '0 0 200 200', role: 'img', 'aria-label': 'FSBP members by 2027 plan: ' + dc.groups.map((g) => `${g.label} ${g.n}`).join(', ') });
+  const center = h('div', { class: 'center' }, h('b'), h('span'));
+  const paths = [];
+  let a = 0;
+  dc.groups.forEach((g, i) => {
+    const a1 = a + (g.n / dc.base) * Math.PI * 2;
+    const p = h('path', { d: arc(60, 96, a, a1), stroke: 'var(--page)', 'stroke-width': 3, onclick: () => pick(i) });
+    paths.push(p); svg.append(p); a = a1;
+  });
+  const ring = h('div', { class: 'ring' }, svg, center);
+  const buttons = dc.groups.map((g, i) => h('button', { type: 'button', onclick: () => pick(i) },
+    h('i', { class: 'sw', style: 'width:14px;height:14px' }),
+    h('span', { class: 'lbl' }, h('b', null, g.label), h('small', null, g.parts.map((p) => `${p.n} ${p.label.toLowerCase()}`).join(' · '))),
+    h('span', { class: 'ct' }, g.n, h('small', null, ` · ${pct(g.n, dc.base)}%`))));
+  const panel = h('div', { class: 'panel', 'aria-live': 'polite' });
+  sec.append(h('div', { class: 'decide' }, ring, h('div', { class: 'choices' }, buttons)), panel);
+  sec.append(h('p', { class: 'aside' }, `On other plans: ${dc.others_switching.n} of ${dc.others_switching.of} GEHA HDHP and Blue Cross members are leaning toward switching.`));
+
+  function pick(i) {
+    sel = i;
+    paths.forEach((p, j) => p.setAttribute('fill', `var(${j === i ? '--accent' : shades[j]})`));
+    buttons.forEach((b, j) => {
+      b.setAttribute('aria-pressed', String(j === i));
+      b.querySelector('.sw').style.background = `var(${j === i ? '--accent' : shades[j]})`;
+    });
+    const g = dc.groups[i];
+    center.children[0].textContent = g.n;
+    center.children[1].textContent = g.label.toLowerCase();
+    panel.replaceChildren(...groupPanel(g));
+  }
+  pick(sel);
+}
+function groupPanel(g) {
+  const d = g.detail;
+  const word = { staying: 'staying', undecided: 'undecided', switching: 'switching' }[g.key];
+  if (!d) return [h('p', { class: 'empty' }, `Only ${g.n} people are in this group, too few to break down.`)];
+  const out = [h('h3', null, `The ${g.n} ${word === 'undecided' ? 'undecided' : 'who are ' + word}`)];
+  if (!d.looking) out.push(h('p', { class: 'lead' }, 'None of them named another plan they are considering.'));
+  else {
+    out.push(h('p', { class: 'lead' }, `Plans they are considering. ${d.looking} of ${g.n} answered, and each dot is one person. People could select more than one.`));
+    out.push(h('div', { class: 'drows' }, d.considering.slice(0, 6).map((c) => h('div', { class: 'drow' },
+      h('span', null, c.label), h('span', { class: 'd' }, Array.from({ length: c.n }, () => h('i'))), h('span', { class: 'c' }, c.n)))));
+    if (d.considering.length > 6) out.push(h('p', { class: 'lead', style: 'font-size:.88rem' }, 'Also named: ' + d.considering.slice(6).map((c) => `${c.label} (${c.n})`).join(', ') + '.'));
+  }
+  out.push(h('div', null, h('p', { class: 'lead', style: 'margin-bottom:8px' }, 'What matters most to them'),
+    h('div', { class: 'pills' }, d.matters.map((m) => h('span', null, h('b', null, `${m.n} of ${g.n}`), ' ' + m.label)))));
+  out.push(h('p', { class: 'lead' }, `In 2027, ${d.overseas27} expect to be mostly overseas and ${d.us27} mostly in the U.S.`));
+  return out;
+}
+
+/* ---------- 2b. other plans ---------- */
+function renderOthers() {
+  const op = D.other_plans;
+  const sec = chapter('others', 'Other plans', 'GEHA HDHP and Blue Cross members are happier with what they pay.',
+    'What the households on other plans told us, with FSBP members noted for comparison. These groups are small: each dot is one household, so read them as a handful of experiences rather than a rating of the plan.');
+  const grid = h('div', { class: 'plans' });
+  op.plans.forEach((p) => {
+    const rows = p.measures.map((m, i) => {
+      const f = op.fsbp[i];
+      const ref = h('span', { class: 'ref' }, `FSBP: ${pct(f.n, f.of)}%`);
+      if (m.hidden) {
+        const what = /overseas claims/.test(m.label) ? 'filed overseas claims' : 'answered';
+        return h('div', { class: 'mrow hidden-row' }, h('span', { class: 'l' }, m.label),
+          h('span', { class: 'line' }, h('span', { class: 'few' }, m.of ? `Only ${m.of} ${what}, too few to show` : 'No answers'), ref));
+      }
+      const dotsEl = h('span', { class: 'mdots', role: 'img', 'aria-label': `${m.n} of ${m.of}` },
+        Array.from({ length: m.of }, (_, k) => h('i', { class: k < m.n ? 'on' : '' })));
+      return h('div', { class: 'mrow' }, h('span', { class: 'l' }, m.label), h('span', { class: 'v' }, ofTxt(m.n, m.of)),
+        h('span', { class: 'line' }, dotsEl, ref));
+    });
+    grid.append(h('article', { class: 'plan' },
+      h('header', null, h('h3', null, p.name), h('p', { class: 'muted' }, `${p.n} households. ${p.kind}`)),
+      h('div', { class: 'mrows' }, rows),
+      h('div', { class: 'pquotes' }, p.quotes.map((q) => h('blockquote', { class: 'pull' }, h('p', null, `“${q.text}”`), h('footer', null, q.who))))));
+  });
+  const gOs = op.plans[0].measures[2], fOs = op.fsbp[2];
+  if (!gOs.hidden) sec.querySelector('header').append(h('p', { class: 'sub' }, `Overseas care is where GEHA HDHP trails: ${gOs.n} of ${gOs.of} of its members say it works well there, compared with ${pct(fOs.n, fOs.of)}% of FSBP members.`));
+  sec.append(grid,
+    h('p', { class: 'aside' }, 'A happier small group is not proof a plan would suit you. GEHA HDHP has a high deductible, so what you pay depends on how much care you use. The last section shows where to find 2027 costs for your own household.'));
+}
+
+/* ---------- 3. overseas vs U.S. ---------- */
+function renderPlace() {
+  const pl = D.place;
+  const sec = chapter('place', 'Overseas vs. U.S.', 'FSBP works better overseas than at home.',
+    'Share of FSBP members who say the plan "works well," counting only people who used it in each place.');
+  sec.append(
+    h('div', { class: 'bars' }, cbar('For care overseas', pl.os), cbar('For care in the U.S.', pl.us)),
+    h('blockquote', { class: 'pull' }, h('p', null, '“FSBP is amazing overseas but only decent when CONUS.”'), h('footer', null, 'FSBP member')),
+    more('Service and access details',
+      h('p', { class: 'muted', style: 'font-size:.92rem' }, 'FSBP members, counting only people for whom each came up.'),
+      h('div', { class: 'bars' }, pl.us_rows.map((r) => cbar(r.text.charAt(0).toUpperCase() + r.text.slice(1), r, { small: true })))));
+}
+
+/* ---------- 4. claims ---------- */
+function renderClaims() {
+  const c = D.claims;
+  const sec = chapter('claims', 'Overseas claims', 'Overseas claims usually get paid, but often after a fight.',
+    `${c.base} of the FSBP members who responded to this survey filed 3 or more overseas claims in the past 2 years.`);
+  sec.append(
+    h('div', { class: 'stat' }, h('div', { class: 'n' }, ofTxt(c.reversed.n, c.reversed.of)),
+      h('p', null, 'had at least one claim denied, then paid after they pushed back. Each dot is one household.')),
+    dots([{ n: c.reversed.n, color: '--accent', label: 'had a denial reversed' }, { n: c.reversed.of - c.reversed.n, color: '--off-2', label: 'did not' }], 'lg'),
+    h('div', { class: 'bars' },
+      cbar('Say most claims were paid without resubmitting or extra paperwork', c.clean),
+      cbar('Usually waited 2 weeks to 3 months for reimbursement', c.typical_wait)),
+    more('Follow-ups, wait times and receipts',
+      h('div', null, h('h4', null, 'Calls or emails needed per claim'), list(c.followups)),
+      h('div', null, h('h4', null, 'Time to get reimbursed'), list(c.reimb)),
+      h('div', null, h('h4', null, 'Submitting foreign bills and receipts'), list(c.receipts)),
+      h('p', { class: 'muted', style: 'font-size:.92rem' }, `${c.final.n} of ${c.final.of} had a claim denied for good${c.dispute ? `, and ${c.dispute} more are still disputing one` : ''}.`)));
+}
+
+/* ---------- 5. priorities ---------- */
+function renderPriorities() {
+  const pr = D.priorities;
+  const sec = chapter('priorities', 'Priorities', 'Price comes first, then easy overseas claims.',
+    `What all ${pr.base} people said matters most in their 2027 choice. Each could pick two.`);
+  sec.append(rank(pr.items.slice(0, 5), pr.base, { highlightFirst: true }));
+  if (pr.items.length > 5) sec.append(more('Everything else people picked', list(pr.items.slice(5), (d) => `${d.n} of ${pr.base}`)));
+}
+
+/* ---------- 6. your situation ---------- */
+function renderYou() {
+  const sec = chapter('you', 'Your situation', 'Find people in a situation like yours.',
+    'Each group is drawn from the same 80 responses. Small groups are flagged.');
+  const panel = h('div', { class: 'panel', 'aria-live': 'polite' });
+  const btns = D.situations.map((s, i) => h('button', { type: 'button', onclick: () => pick(i) },
+    h('b', null, s.title), h('small', null, `${s.n} people`)));
+  sec.append(h('div', { class: 'cards' }, btns), panel);
+  function pick(i) {
+    btns.forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
+    const s = D.situations[i];
+    panel.replaceChildren(...[
+      h('h3', null, s.title), h('p', { class: 'lead' }, s.blurb),
+      s.members_label ? h('p', { class: 'lead', style: 'font-weight:600;color:var(--ink)' }, s.members_label) : null,
+      h('div', { class: 'findings' }, s.findings.map((f) => h('div', { class: 'finding' },
+        h('span', { class: 'n' }, ofTxt(f.n, f.of)), h('span', null, f.text),
+        h('div', { class: 'track' }, h('span', { style: `width:${pct(f.n, f.of)}%` }))))),
+      s.note ? h('p', { class: 'lead' }, s.note) : null,
+      s.quote ? h('blockquote', { class: 'pull' }, h('p', null, `“${s.quote.text}”`), h('footer', null, s.quote.who)) : null].filter(Boolean));
+  }
+  pick(0);
+}
+
+/* ---------- 7. quotes ---------- */
+function renderWords() {
+  const sec = chapter('words', 'In their words', 'What people wrote in the comment box.',
+    'Excerpts, trimmed for length and to remove identifying details. Brackets mark edits.');
+  const box = h('div', { class: 'quotes' });
+  const SHOW = 6;
+  const order = [5, 8, 0, 1, 11, 13, 6, 10, 2, 3, 4, 7, 9, 12, 14, 15, 16].filter((i) => i < D.quotes.length);
+  const hidden = [];
+  order.forEach((qi, k) => {
+    const q = D.quotes[qi];
+    const el = h('blockquote', null, h('div', { class: 'qtheme' }, q.theme), h('p', null, `“${q.text}”`), h('footer', null, q.who));
+    if (k >= SHOW) { el.hidden = true; hidden.push(el); }
+    box.append(el);
+  });
+  sec.append(box);
+  if (hidden.length) {
+    const b = h('button', { class: 'btn-link', type: 'button', onclick: () => { hidden.forEach((e) => (e.hidden = false)); b.remove(); } }, `Show all ${D.quotes.length} quotes`);
+    sec.append(b);
+  }
+}
+
+/* ---------- 8. chat with the data ---------- */
+const PROMPT = `I've attached two files: (1) an anonymous survey of 80 Foreign Service households about their FEHB health plans, collected in October 2026, and (2) OPM's 2027 premium rates for nationwide FEHB plans.
+
+About my household: we are [Self Only / Self Plus One / Self and Family], currently on [plan], and we expect to be mostly [overseas / in the U.S.] in 2027. We usually [rarely need care / file a few claims a year / have ongoing care].
+
+Please:
+1. Summarize what survey respondents in situations like mine said about each plan I'm considering. Tell me when a group is too small to rely on.
+2. Using the premium file, show what I would pay per pay period in 2027 for those plans.
+3. List what I should check in each plan's 2027 brochure before deciding.
+Only use numbers that appear in the files.`;
+
+function renderData() {
+  const sec = chapter('data', 'Chat with the data', 'Ask your own AI assistant about your specific situation.',
+    'Download the responses, add official cost information, and ask your preferred AI assistant (ChatGPT, Claude, Gemini, etc.) questions about plans and households like yours.');
+  const copyBtn = h('button', { class: 'copy', type: 'button' }, 'Copy');
+  const pre = h('pre', null, PROMPT);
+  copyBtn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(PROMPT); copyBtn.textContent = 'Copied'; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); copyBtn.textContent = 'Selected, press copy'; }
+    setTimeout(() => (copyBtn.textContent = 'Copy'), 2500);
+  });
+  const ext = { target: '_blank', rel: 'noopener' };
+  sec.append(h('ol', { class: 'steps' },
+    h('li', null, h('div', null, h('h3', null, 'Download the survey responses'),
+      h('p', { class: 'muted', style: 'font-size:.95rem' }, `One row per household, ${D.n} rows. Timestamps, comments and write-in text are removed, and rows are shuffled to protect respondents.`),
+      h('a', { class: 'btn', href: D.csv, download: D.csv }, 'Download responses (CSV)'))),
+    h('li', null, h('div', null, h('h3', null, 'Add 2027 cost information'),
+      h('ul', { class: 'srcs' },
+        h('li', null, h('a', { href: 'https://www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/py2027/fehb/ffs.xlsx', ...ext }, '2027 premiums for nationwide plans'), ' (OPM, Excel). Covers FSBP, GEHA, Blue Cross and the other nationwide plans. Regional HMOs are in a ',
+          h('a', { href: 'https://www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/py2027/fehb/hmo.xlsx', ...ext }, 'separate file'), '.'),
+        h('li', null, 'Each plan’s 2027 brochure (PDF) for deductibles, copays and out-of-pocket maximums. Find them through ',
+          h('a', { href: 'https://www.opm.gov/healthcare-insurance/healthcare/plan-information/compare-plans/', ...ext }, "OPM's plan comparison tool"), ' or the plans’ own sites: ',
+          h('a', { href: 'https://www.afspa.org/fsbp/', ...ext }, 'FSBP'), ', ', h('a', { href: 'https://www.geha.com/', ...ext }, 'GEHA'), ', ',
+          h('a', { href: 'https://www.fepblue.org/plan-brochures', ...ext }, 'Blue Cross'), '.'),
+        h('li', null, h('a', { href: 'https://www.checkbook.org/newhig2/AboutGuide.cfm', ...ext }, "Checkbook's Guide to Health Plans"), ' estimates total yearly cost by family type and usage.')))),
+    h('li', null, h('div', null, h('h3', null, 'Upload the files and give it a prompt'),
+      h('p', { class: 'muted', style: 'font-size:.95rem' }, 'Here is a sample prompt to get you going. Fill in the brackets. Share only the personal health details you are comfortable giving an AI service, and check key numbers against the brochure.'),
+      h('div', { class: 'prompt' }, copyBtn, pre)))));
+}
+
+/* ---------- 9. about ---------- */
+function renderAbout() {
+  const sec = chapter('about', 'Method', 'How this survey worked');
+  sec.append(h('ul', null,
+    h('li', null, h('strong', null, 'Who answered: '), `${D.n} households answered an anonymous Google Form shared in Foreign Service Facebook groups, ${D.first} to ${D.last}, 2026.`),
+    h('li', null, h('strong', null, 'Not a random sample: '), 'People chose to respond, and FSBP members facing a large price increase may have been more likely to answer.'),
+    h('li', null, h('strong', null, 'Mostly FSBP: '), `${D.fsbp} of ${D.n} are FSBP members. Results for GEHA HDHP and Blue Cross come from a handful of households each.`),
+    h('li', null, h('strong', null, 'Who counts in each number: '), 'Each "X of Y" counts only people who answered that question and had the experience. Groups smaller than 5 people are not broken down.'),
+    h('li', null, h('strong', null, 'The past 2 years: '), 'Claims and service questions covered the past 2 years. Plans change, so past experience may not predict 2027.')));
+}
+
+renderHeader(); renderPrice(); renderSwitch(); renderOthers(); renderPlace(); renderClaims(); renderPriorities(); renderYou(); renderWords(); renderData(); renderAbout();
+</script>
+
+</body>
+</html>
